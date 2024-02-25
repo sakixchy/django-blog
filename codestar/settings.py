@@ -29,10 +29,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'django-insecure-v+&umn(d-3e$2x^$_=$h%1$9%a@j7^hl@u%xj7_9lb0jlt4f(g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-sakixchy-djangoblog-clmdrj1krcy.ws-eu108.gitpod.io',
-'.herokuapp.com']
+ALLOWED_HOSTS = ['8000-sakixchy-djangoblog-clmdrj1krcy.ws-eu108.gitpod.io']
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
@@ -48,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'allauth.socialaccount',
     'blog',
     'django_summernote',
@@ -57,6 +58,9 @@ INSTALLED_APPS = [
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
